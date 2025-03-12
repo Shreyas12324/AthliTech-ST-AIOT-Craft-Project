@@ -33,6 +33,7 @@ This project consists of a collection of interactive sensor-based visualizers de
 - **Data Processing**: NumPy (for numerical computations)
 
 ## Documentation
+ https://docs.google.com/document/d/1_3aOXfcF3SWF6_m7hnmZ2VtqVYfztu8QkoeiiyES2nA/edit?usp=sharing
 
 ## Installation
 
@@ -141,3 +142,4 @@ Link:
 
  
 Configuration file generated after changing the firmware to Entry/Expert 1.21, containing updated settings for the MLC.
+
