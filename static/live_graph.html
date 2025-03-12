@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Accelerometer Graph</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h2>Real-Time Accelerometer Data</h2>
+    <div id="accelGraph"></div>
+
+    <script>
+        let timeData = [];
+        let xData = [], yData = [], zData = [];
+
+        function fetchSensorData() {
+            fetch("/plot-data")
+                .then(response => response.json())
+                .then(data => {
+                    if (timeData.length > 100) {
+                        timeData.shift();
+                        xData.shift();
+                        yData.shift();
+                        zData.shift();
+                    }
+                    timeData.push(new Date(data.time * 1000).toLocaleTimeString());
+                    xData.push(data.x);
+                    yData.push(data.y);
+                    zData.push(data.z);
+                    updateGraph();
+                });
+        }
+
+        function updateGraph() {
+            Plotly.react('accelGraph', [{
+                x: timeData, y: xData, mode: 'lines', name: 'X', line: { color: 'blue' }
+            }, {
+                x: timeData, y: yData, mode: 'lines', name: 'Y', line: { color: 'green' }
+            }, {
+                x: timeData, y: zData, mode: 'lines', name: 'Z', line: { color: 'red' }
+            }], {
+                title: 'Accelerometer Data',
+                xaxis: { title: 'Time' },
+                yaxis: { title: 'Acceleration (g)' }
+            });
+        }
+
+        setInterval(fetchSensorData, 200);  // Update every 200ms
+    </script>
+</body>
+</html>
