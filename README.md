@@ -1,1 +1,1 @@
-# AthliTech---ST-AIOT-Craft-Project
+# AthliTech ST-AIOT-Craft-Project
