@@ -4,7 +4,7 @@ from bleak import BleakScanner, BleakClient
 DEVICE_NAME = "Daman24"
 DEVICE_ADDRESS = "5A19965D-1489-7BD7-F87F-E1C7B04BC2F9"   
 
-# Just define the single UUID you want to test
+ 
 TARGET_UUID = "00000023-0002-11e1-ac36-0002a5d5c51b"
 class CharacteristicReader:
     def __init__(self):
