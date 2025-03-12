@@ -1,0 +1,4 @@
+Flask==2.2.2
+Flask-CORS==3.0.10
+bleak==0.19.0
+numpy==1.23.5
