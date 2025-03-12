@@ -1,0 +1,16 @@
+{
+  "name": "sensor-game",
+  "version": "1.0.0",
+  "description": "A collection of sensor-based games using p5.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server ."
+  },
+  "dependencies": {
+    "p5": "^1.4.0"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
